@@ -73,14 +73,43 @@ with gr.Blocks(title="Revenue Integrity Command Center") as demo:
 
     gr.Markdown("## 🌐 Global Revenue Integrity Command Center (Powered by AGENT-3)")
 
-    # KPI Row
+      # KPI Row
     with gr.Row():
         for k, v in kpis.items():
-            gr.Markdown(f"""
-            <div style="padding:12px;border-radius:8px;background:#f5f7fa">
-                <b>{k}</b><br/>{v}
-            </div>
-            """)
+            if k == "Financial Exposure":
+                gr.Markdown(f"""
+                <div style="padding: 4px 12px; border-radius:8px; background:#f5f7fa; text-align: center;">
+                    <b style="color: darkblue;">{k}</b><br/>
+                    <span style="background-color: black; color: white; padding: 4px; border-radius: 4px; display: block; width: 100%; box-sizing: border-box; text-align: center;">{v}</span>
+                </div>
+                """)
+            elif k == "Recovery Velocity":
+                gr.Markdown(f"""
+                <div style="padding: 4px 12px; border-radius:8px; background:#f5f7fa; text-align: center;">
+                    <b style="color: darkblue;">{k}</b><br/>
+                    <span style="background-color: black; color: white; padding: 4px; border-radius: 4px; display: block; width: 100%; box-sizing: border-box; text-align: center;">{v}</span>
+                </div>
+                """)
+            elif k == "Portfolio Risk":
+                gr.Markdown(f"""
+                <div style="padding: 4px 12px; border-radius:8px; background:#f5f7fa; text-align: center;">
+                    <b style="color: darkblue;">{k}</b><br/>
+                    <span style="background-color: black; color: white; padding: 4px; border-radius: 4px; display: block; width: 100%; box-sizing: border-box; text-align: center;">{v}</span>
+                </div>
+                """)
+            elif k == "Audit Compliance":
+                gr.Markdown(f"""
+                <div style="padding: 4px 12px; border-radius:8px; background:#f5f7fa; text-align: center;">
+                    <b style="color: darkblue;">{k}</b><br/>
+                    <span style="background-color: black; color: white; padding: 4px; border-radius: 4px; display: block; width: 100%; box-sizing: border-box; text-align: center;">{v}</span>
+                </div>
+                """)
+            else:
+                gr.Markdown(f"""
+                <div style="padding:12px;border-radius:8px;background:#f5f7fa">
+                    <b>{k}</b><br/>{v}
+                </div>
+                """)
 
     # Main Panels
     with gr.Row():
